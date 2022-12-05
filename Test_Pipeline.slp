@@ -1,7 +1,14 @@
 {
     "class_id": "com-snaplogic-pipeline",
     "class_version": 9,
-    "link_map": {},
+    "link_map": {
+        "link101": {
+            "dst_id": "11111111-1111-1111-1111-000000000001",
+            "dst_view_id": "inputRows",
+            "src_id": "11111111-1111-1111-1111-000000000000",
+            "src_view_id": "output0"
+        }
+    },
     "property_map": {
         "error": {
             "error_behavior": {
@@ -34,9 +41,9 @@
             }
         },
         "output": {
-            "11111111-1111-1111-1111-000000000000_output0": {
+            "11111111-1111-1111-1111-000000000001_output0": {
                 "label": {
-                    "value": "Mapper - output0"
+                    "value": "Snowflake - Insert - output0"
                 },
                 "view_type": {
                     "value": "document"
@@ -73,6 +80,18 @@
                 "rot_int": 0,
                 "rot_tail_int": 0,
                 "source": "snap catagory"
+            },
+            "11111111-1111-1111-1111-000000000001": {
+                "error": {},
+                "grid_x_int": 3,
+                "grid_y_int": 1,
+                "index": 0,
+                "input": {},
+                "output": {},
+                "recommendation_id": "6b8d855c-aa54-8449-a97d-c47f644eab63_0",
+                "rot_int": 0,
+                "rot_tail_int": 0,
+                "source": "iris placeholder"
             }
         },
         "pan_x_num": 0,
@@ -153,6 +172,80 @@
                                 ]
                             }
                         }
+                    }
+                },
+                "view_serial": 100
+            }
+        },
+        "11111111-1111-1111-1111-000000000001": {
+            "class_id": "com-snaplogic-snaps-snowflake-insert",
+            "class_version": 1,
+            "instance_id": "11111111-1111-1111-1111-000000000001",
+            "property_map": {
+                "account": {
+                    "account_ref": {
+                        "value": {}
+                    }
+                },
+                "error": {
+                    "error0": {
+                        "label": {
+                            "value": "error0"
+                        },
+                        "view_type": {
+                            "value": "document"
+                        }
+                    },
+                    "error_behavior": {
+                        "value": "fail"
+                    }
+                },
+                "info": {
+                    "label": {
+                        "value": "Snowflake - Insert"
+                    }
+                },
+                "input": {
+                    "inputRows": {
+                        "label": {
+                            "value": "rows"
+                        },
+                        "view_type": {
+                            "value": "document"
+                        }
+                    }
+                },
+                "output": {
+                    "output0": {
+                        "label": {
+                            "value": "output0"
+                        },
+                        "view_type": {
+                            "value": "document"
+                        }
+                    }
+                },
+                "settings": {
+                    "createTable": {
+                        "value": false
+                    },
+                    "executable_during_suggest": {
+                        "value": false
+                    },
+                    "execution_mode": {
+                        "value": "Execute only"
+                    },
+                    "maxRetryProp": {
+                        "value": 0
+                    },
+                    "preserveCaseSensistiveness": {
+                        "value": false
+                    },
+                    "retryIntervalProp": {
+                        "value": 1
+                    },
+                    "sqlQueryManagement": {
+                        "value": "Continue to execute queued queries when pipeline is stopped or if it fails"
                     }
                 },
                 "view_serial": 100
